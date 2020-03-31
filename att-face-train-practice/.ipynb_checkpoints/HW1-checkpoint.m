@@ -1,5 +1,5 @@
 clc;close all;clear;
-for epoch=1:20
+for epoch=1:1
     %train    
     output=[];
     X=[];
@@ -12,7 +12,7 @@ for epoch=1:20
             pic_num= randi([1,10]);
             %pic_num=j;
             %genarate 5 nonrepeatedly number
-            randomlist=[randomlist pic_num];
+            randomlist=[randomlist pic_num]
             while size(find(randomlist==pic_num))~=0
                 pic_num= randi([1,10]);
                 %pic_num=j;
