@@ -3,5 +3,5 @@
 ### requirements
 
 ```bash
-pip install numpy matplotlib Pillow
+pip install numpy matplotlib opencv-python
 ```
