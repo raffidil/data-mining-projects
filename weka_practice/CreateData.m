@@ -8,4 +8,5 @@ class=sign (-2+x1+2 * x2);
 matrix=[matrix; x1 x2 class];
 
  end
- save -ascii data.dat matrix
+ save -ascii dataset.dat matrix
+ dlmwrite('dataset.csv', matrix, ",")
