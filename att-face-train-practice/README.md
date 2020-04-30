@@ -3,5 +3,5 @@
 ### requirements
 
 ```bash
-pip install numpy matplotlib opencv-python
+pip install numpy matplotlib opencv-python scipy sklearn
 ```
