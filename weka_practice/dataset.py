@@ -1,13 +1,14 @@
-import random
 import numpy as np
-a = -5
-b = 5
-matrix = np.array([])
-
-for i in range(1,6001):
-    x1 = a + (b-a)*random.random()
-    x2 = a + (b-a)*random.random()
-    class_ = int(np.sign(-2 + x1 + 2 * x2)) ### I think it should be  ( -2*x1 + 2*x2 )
-    arr = np.array([x1,x2,class_])
-    matrix = np.hstack((matrix, arr))
-np.savetxt('dataset.dat', matrix)
+header_sting = """relation exuation
+attribute xone real
+attribute xtwo real
+attribute output {-1,1}
+data"""
+file_path = '/home/mohammad/GIT projects/GitHub/data-mining-projects/weka_practice/dataset.arff'
+dataset = np.loadtxt(file_path, delimiter = ',', comments='@' )
+different_sizes = [50, 100, 250, 1650, 2550]
+for size in different_sizes:
+    index_array = np.random.randint(low = 0,high = 6000,size = size , dtype="int16")
+    chosen_data = dataset[index_array,:]
+    np.savetxt('/home/mohammad/GIT projects/GitHub/data-mining-projects/weka_practice/randomlyChosen%s'%str(size)+'.arff',
+                chosen_data,delimiter=',',header=header_sting, comments='@')
